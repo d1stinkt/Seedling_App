@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   
+  latlong: ^0.6.0
+  
   flutter_map: any
 
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map/flutter_map.dart'; //gives map
+import 'package:latlong/latlong.dart'; //gives coordinates
 
 void main() {
   runApp(MyApp());
@@ -105,7 +106,8 @@ class _MyHomePageState extends State<MyHomePage> {
               // This trailing comma makes auto-formatting nicer for build methods.
             ]),
         body: new FlutterMap(
-          options: new MapOptions(minZoom: 10.0),
+          //I think this makes the map go to the background
+          options: new MapOptions(center: LatLng(60.45, 22.26), zoom: 12),
           layers: [
             new TileLayerOptions(
                 urlTemplate:
