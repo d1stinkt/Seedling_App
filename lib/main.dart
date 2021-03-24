@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_map/flutter_map.dart'; //gives map
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart'; //markers?
+import 'package:latlong/latlong.dart'; //gives coordinates
 
 void main() {
   runApp(MyApp());
@@ -67,38 +70,57 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
             // Here we take the value from the MyHomePage object that was created by
             // the App.build method, and use it to set our appbar title.
+
             title: Text(widget.title),
             actions: [
-          PopupMenuButton(
-            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.account_circle_outlined),
-                    title: Text('Account')),
+              //this is a questionmark...
+              PopupMenuButton(
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.account_circle_outlined),
+                        title: Text('Account')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.star_outline_rounded),
+                        title: Text('Favorites')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.settings_rounded),
+                        title: Text('Settings')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.help_rounded),
+                        title: Text('Plz Help')),
+                  ),
+                ],
               ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.star_outline_rounded),
-                    title: Text('Favorites')),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.settings_rounded),
-                    title: Text('Settings')),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.help_rounded), title: Text('Plz Help')),
-              ),
-            ],
-          ),
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
+              // Center is a layout widget. It takes a single child and positions it
+              // in the middle of the parent.
 
-          // This trailing comma makes auto-formatting nicer for build methods.
-        ]));
+              // This trailing comma makes auto-formatting nicer for build methods.
+            ]),
+        body: new FlutterMap(
+          //I think this makes the map go to the background
+          options: new MapOptions(
+              plugins: [
+                MarkerClusterPlugin(),
+              ], //don't know how to use this
+              center: LatLng(60.45, 22.26),
+              zoom: 12), //fix zoom later if not good
+          //a note on the zooming... If you zoom too much the screen goes gray
+          layers: [
+            new TileLayerOptions(
+                urlTemplate:
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                subdomains: ['a', 'b', 'c']),
+          ],
+        ));
   }
 }
