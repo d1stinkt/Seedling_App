@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart'; //gives map
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart'; //markers?
 import 'package:latlong/latlong.dart'; //gives coordinates
 
 void main() {
@@ -108,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
         body: new FlutterMap(
           //I think this makes the map go to the background
           options: new MapOptions(
+              plugins: [
+                MarkerClusterPlugin(),
+              ], //don't know how to use this
               center: LatLng(60.45, 22.26),
               zoom: 12), //fix zoom later if not good
           layers: [
