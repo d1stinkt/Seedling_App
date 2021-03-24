@@ -107,7 +107,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
         body: new FlutterMap(
           //I think this makes the map go to the background
-          options: new MapOptions(center: LatLng(60.45, 22.26), zoom: 12),
+          options: new MapOptions(
+              center: LatLng(60.45, 22.26),
+              zoom: 12), //fix zoom later if not good
           layers: [
             new TileLayerOptions(
                 urlTemplate:
