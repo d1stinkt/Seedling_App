@@ -76,28 +76,41 @@ class _MyHomePageState extends State<MyHomePage> {
               //this is a questionmark...
               PopupMenuButton(
                 itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-                  const PopupMenuItem(
+                  PopupMenuItem(
                     child: ListTile(
                         leading: Icon(Icons.account_circle_outlined),
                         title: Text('Account')),
                   ),
-                  const PopupMenuDivider(),
-                  const PopupMenuItem(
+                  PopupMenuDivider(),
+                  PopupMenuItem(
                     child: ListTile(
-                        leading: Icon(Icons.star_outline_rounded),
-                        title: Text('Favorites')),
+                      leading: Icon(Icons.star_outline_rounded),
+                      title: Text('Favorites'),
+                      onTap: () {
+                        print(
+                            'This bitch empty!'); //only prints in terminal... sadge
+                      },
+                    ),
                   ),
-                  const PopupMenuDivider(),
-                  const PopupMenuItem(
+                  PopupMenuDivider(),
+                  PopupMenuItem(
                     child: ListTile(
-                        leading: Icon(Icons.settings_rounded),
-                        title: Text('Settings')),
+                      leading: Icon(Icons.settings_rounded),
+                      title: Text('Settings'),
+                      onTap: () {
+                        //navigate to settings
+                      },
+                    ),
                   ),
-                  const PopupMenuDivider(),
-                  const PopupMenuItem(
+                  PopupMenuDivider(),
+                  PopupMenuItem(
                     child: ListTile(
-                        leading: Icon(Icons.help_rounded),
-                        title: Text('Plz Help')),
+                      leading: Icon(Icons.help_rounded),
+                      title: Text('Plz Help'),
+                      onTap: () {
+                        //navigate to halp
+                      },
+                    ),
                   ),
                 ],
               ),
