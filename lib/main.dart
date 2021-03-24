@@ -71,37 +71,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
             title: Text(widget.title),
             actions: [
-          //this is a questionmark...
-          PopupMenuButton(
-            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.account_circle_outlined),
-                    title: Text('Account')),
+              //this is a questionmark...
+              PopupMenuButton(
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.account_circle_outlined),
+                        title: Text('Account')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.star_outline_rounded),
+                        title: Text('Favorites')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.settings_rounded),
+                        title: Text('Settings')),
+                  ),
+                  const PopupMenuDivider(),
+                  const PopupMenuItem(
+                    child: ListTile(
+                        leading: Icon(Icons.help_rounded),
+                        title: Text('Plz Help')),
+                  ),
+                ],
               ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.star_outline_rounded),
-                    title: Text('Favorites')),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.settings_rounded),
-                    title: Text('Settings')),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: ListTile(
-                    leading: Icon(Icons.help_rounded), title: Text('Plz Help')),
-              ),
-            ],
-          ),
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
+              // Center is a layout widget. It takes a single child and positions it
+              // in the middle of the parent.
 
-          // This trailing comma makes auto-formatting nicer for build methods.
-        ]));
+              // This trailing comma makes auto-formatting nicer for build methods.
+            ]),
+        body: new FlutterMap(
+          options: new MapOptions(minZoom: 10.0),
+          layers: [
+            new TileLayerOptions(
+                urlTemplate:
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                subdomains: ['a', 'b', 'c'])
+          ],
+        ));
   }
 }
