@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart'; //gives map
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart'; //markers?
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        primaryColor: Colors.indigo[900],
+        primaryColor: Color(0xff0f1b2b),
         accentColor: Colors.orange[700],
         backgroundColor: Colors.cyan[900],
       ),
@@ -77,16 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
             // Here we take the value from the MyHomePage object that was created by
             // the App.build method, and use it to set our appbar title.
 
-            title: Text(widget.title),
+            title: Text(
+              widget.title,
+              style: TextStyle(color: Color(0xffe98700)),
+            ),
             actions: [
               //this is a questionmark...
               PopupMenuButton(
-                color: Colors.orange[700],
+                color: Color(0xff142543),
                 itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                   PopupMenuItem(
                       child: ListTile(
-                    leading: Icon(Icons.account_circle_outlined),
-                    title: Text('Profile'),
+                    leading: Icon(Icons.account_circle_outlined,
+                        color: Color(
+                          0xffe98700,
+                        )),
+                    title: Text('Profile',
+                        style: TextStyle(color: Color(0xffe98700))),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -102,8 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   PopupMenuDivider(),
                   PopupMenuItem(
                     child: ListTile(
-                      leading: Icon(Icons.star_outline_rounded),
-                      title: Text('Favorites'),
+                      leading: Icon(
+                        Icons.star_outline_rounded,
+                        color: Color(0xffe98700),
+                      ),
+                      title: Text('Favorites',
+                          style: TextStyle(color: Color(0xffe98700))),
                       onTap: () {
                         Navigator.push(
                             context,
@@ -117,8 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   PopupMenuDivider(),
                   PopupMenuItem(
                     child: ListTile(
-                      leading: Icon(Icons.settings_rounded),
-                      title: Text('Settings'),
+                      leading: Icon(
+                        Icons.settings_rounded,
+                        color: Color(0xffe98700),
+                      ),
+                      title: Text('Settings',
+                          style: TextStyle(color: Color(0xffe98700))),
                       onTap: () {
                         Navigator.push(
                             context,
@@ -132,8 +149,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   PopupMenuDivider(),
                   PopupMenuItem(
                     child: ListTile(
-                      leading: Icon(Icons.help_rounded),
-                      title: Text('Plz Help'),
+                      leading: Icon(
+                        Icons.help_rounded,
+                        color: Color(0xffe98700),
+                      ),
+                      title: Text('Plz Help',
+                          style: TextStyle(color: Color(0xffe98700))),
                       onTap: () {
                         Navigator.push(
                             context,

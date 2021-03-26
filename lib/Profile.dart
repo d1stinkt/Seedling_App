@@ -13,11 +13,10 @@ class ProfileUI2 extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              color: Colors.orange[700],
+              color: Color(0xffe98700),
               child: Center(
                   child: Ink(
                       decoration: const ShapeDecoration(
-                        color: Colors.indigo,
                         shape: CircleBorder(),
                       ),
                       child: IconButton(
@@ -29,7 +28,7 @@ class ProfileUI2 extends StatelessWidget {
                       )))),
           Container(
             decoration: BoxDecoration(
-                color: Colors.orange[700],
+                color: Color(0xffe98700),
                 image: DecorationImage(
                     colorFilter: ColorFilter.linearToSrgbGamma(),
                     image: NetworkImage(
@@ -56,7 +55,7 @@ class ProfileUI2 extends StatelessWidget {
             "Seeder",
             style: TextStyle(
                 fontSize: 25.0,
-                color: Colors.orange[700],
+                color: Color(0xffe98700),
                 letterSpacing: 2.0,
                 fontWeight: FontWeight.w400),
           ),
@@ -110,7 +109,7 @@ class ProfileUI2 extends StatelessWidget {
                         Text(
                           "Seeds",
                           style: TextStyle(
-                              color: Colors.orange[700],
+                              color: Color(0xffe98700),
                               fontSize: 22.0,
                               fontWeight: FontWeight.w600),
                         ),
@@ -133,7 +132,7 @@ class ProfileUI2 extends StatelessWidget {
                         Text(
                           "Stars",
                           style: TextStyle(
-                              color: Colors.orange[700],
+                              color: Color(0xffe98700),
                               fontSize: 22.0,
                               fontWeight: FontWeight.w600),
                         ),
@@ -173,7 +172,7 @@ class ProfileUI2 extends StatelessWidget {
                     gradient: LinearGradient(
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        colors: [Colors.orange[700], Colors.redAccent]),
+                        colors: [Color(0xffe98700), Colors.redAccent]),
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: Container(
@@ -203,7 +202,7 @@ class ProfileUI2 extends StatelessWidget {
                     gradient: LinearGradient(
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        colors: [Colors.redAccent, Colors.orange[700]]),
+                        colors: [Colors.redAccent, Color(0xffe98700)]),
                     borderRadius: BorderRadius.circular(80.0),
                   ),
                   child: Container(

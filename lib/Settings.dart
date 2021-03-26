@@ -9,11 +9,10 @@ class Settings extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              color: Colors.orange[700],
+              color: Color(0xffe98700),
               child: Center(
                   child: Ink(
                       decoration: const ShapeDecoration(
-                        color: Colors.indigo,
                         shape: CircleBorder(),
                       ),
                       child: IconButton(
@@ -24,16 +23,15 @@ class Settings extends StatelessWidget {
                         },
                       )))),
           Container(
-              color: Colors.indigo[900],
+              color: Color(0xff142543),
               child: Center(
                   child: Ink(
                 decoration: const ShapeDecoration(
-                  color: Colors.indigo,
                   shape: CircleBorder(),
                 ),
                 child: IconButton(
                   icon: Icon(Icons.settings),
-                  color: Colors.orange[700],
+                  color: Color(0xffe98700),
                   onPressed: () {},
                 ),
               ))),
