@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         leading: Icon(Icons.account_circle_outlined),
                         title: Text('Profile'),
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileUI2()
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileUI2() //You make a new .dart file and just use this to access it.
                           ));
 
                           print('Still working on it... bruh!'); //also prints in terminal, but tryna add a profile page
