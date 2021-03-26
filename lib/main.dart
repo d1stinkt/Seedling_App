@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        primaryColor: Colors.blue[700],
-        accentColor: Colors.redAccent,
+        primaryColor: Colors.indigo[900],
+        accentColor: Colors.orange[700],
         backgroundColor: Colors.cyan[900],
       ),
       home: MyHomePage(title: 'Seedling App'),
@@ -81,27 +81,34 @@ class _MyHomePageState extends State<MyHomePage> {
             actions: [
               //this is a questionmark...
               PopupMenuButton(
+                color: Colors.orange[700],
                 itemBuilder: (BuildContext context) => <PopupMenuEntry>[
                   PopupMenuItem(
-                    child: ListTile(
-                        leading: Icon(Icons.account_circle_outlined),
-                        title: Text('Profile'),
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileUI2() //You make a new .dart file and just use this to access it.
-                          ));
+                      child: ListTile(
+                    leading: Icon(Icons.account_circle_outlined),
+                    title: Text('Profile'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ProfileUI2() //You make a new .dart file and just use this to access it.
+                              ));
 
-                          print('Still working on it... bruh!'); //also prints in terminal, but tryna add a profile page
-                        },
-                    )
-                  ),
+                      print(
+                          'Still working on it... bruh!'); //also prints in terminal, but tryna add a profile page
+                    },
+                  )),
                   PopupMenuDivider(),
                   PopupMenuItem(
                     child: ListTile(
                       leading: Icon(Icons.star_outline_rounded),
                       title: Text('Favorites'),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Favorites()
-                        ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Favorites()));
                         print(
                             'This bitch empty! but interactable lul'); //only prints in terminal... sadge
                       },
@@ -113,8 +120,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.settings_rounded),
                       title: Text('Settings'),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Settings() //You make a new .dart file and just use this to access it.
-                        ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Settings() //You make a new .dart file and just use this to access it.
+                                ));
                       },
                     ),
                   ),
@@ -124,8 +135,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.help_rounded),
                       title: Text('Plz Help'),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => PlzHelp() //You make a new .dart file and just use this to access it.
-                        ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    PlzHelp() //You make a new .dart file and just use this to access it.
+                                ));
                         //navigate to halp
                       },
                     ),
@@ -155,4 +170,3 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
-
