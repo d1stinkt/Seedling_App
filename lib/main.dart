@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart'; //gives map
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart'; //markers?
-import 'package:latlong/latlong.dart'; //gives coordinates
+import 'package:latlong/latlong.dart';
+import 'package:seedling_app/Profile.dart'; //gives coordinates
+import 'service_locator.dart';
+
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -24,9 +28,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        primaryColor: Colors.indigo[900],
+        primaryColor: Colors.lightBlue[900],
         accentColor: Colors.indigo[900],
-        backgroundColor: Colors.indigo[900],
+        backgroundColor: Colors.blue[300],
       ),
       home: MyHomePage(title: 'Seedling App'),
     );
@@ -79,7 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   PopupMenuItem(
                     child: ListTile(
                         leading: Icon(Icons.account_circle_outlined),
-                        title: Text('Account')),
+                        title: Text('Profile'),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileUI2()
+                          ));
+
+                          print('Still working on it... bruh!'); //also prints in terminal, but tryna add a profile page
+                        },
+                    )
                   ),
                   PopupMenuDivider(),
                   PopupMenuItem(
@@ -137,3 +148,4 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 }
+
