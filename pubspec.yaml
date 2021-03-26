@@ -35,6 +35,7 @@ dependencies:
   # dependency injection
   get_it: ^1.0.3
 
+  flutter_slider_drawer: ^2.0.0
 
 
 
