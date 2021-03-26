@@ -4,7 +4,9 @@ import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart'; //m
 import 'package:latlong/latlong.dart';
 import 'package:seedling_app/Profile.dart'; //gives coordinates
 import 'service_locator.dart';
-
+import 'package:seedling_app/Favorites.dart';
+import 'package:seedling_app/Settings.dart';
+import 'package:seedling_app/Plz_Help.dart';
 
 void main() {
   setupLocator();
@@ -28,9 +30,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
 
-        primaryColor: Colors.lightBlue[900],
-        accentColor: Colors.indigo[900],
-        backgroundColor: Colors.blue[300],
+        primaryColor: Colors.blue[700],
+        accentColor: Colors.redAccent,
+        backgroundColor: Colors.cyan[900],
       ),
       home: MyHomePage(title: 'Seedling App'),
     );
@@ -98,8 +100,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.star_outline_rounded),
                       title: Text('Favorites'),
                       onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Favorites()
+                        ));
                         print(
-                            'This bitch empty!'); //only prints in terminal... sadge
+                            'This bitch empty! but interactable lul'); //only prints in terminal... sadge
                       },
                     ),
                   ),
@@ -109,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.settings_rounded),
                       title: Text('Settings'),
                       onTap: () {
-                        //navigate to settings
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Settings() //You make a new .dart file and just use this to access it.
+                        ));
                       },
                     ),
                   ),
@@ -119,6 +124,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: Icon(Icons.help_rounded),
                       title: Text('Plz Help'),
                       onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => PlzHelp() //You make a new .dart file and just use this to access it.
+                        ));
                         //navigate to halp
                       },
                     ),
