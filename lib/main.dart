@@ -179,13 +179,13 @@ class _MyHomePageState extends State<MyHomePage> {
               plugins: [
                 MarkerClusterPlugin(),
               ], //don't know how to use this
-              center: LatLng(60.45, 22.26),
-              zoom: 12), //fix zoom later if not good
+              center: LatLng(60.46, 22.26),
+              zoom: 13), //fix zoom later if not good
           //a note on the zooming... If you zoom too much the screen goes gray
           layers: [
             new TileLayerOptions(
                 urlTemplate:
-                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    "https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png",
                 subdomains: ['a', 'b', 'c']),
           ],
         ));
